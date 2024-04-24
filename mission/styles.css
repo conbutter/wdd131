@@ -1,0 +1,49 @@
+.content {
+    font-family: 'Times New Roman';
+    font-size: 20px;
+    padding: 70px 90px;
+    max-width: 600px;
+    margin: auto;
+}
+
+body {
+    border: 0.5px solid;
+    max-width: 900px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+header {
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 0.1em;
+    font-size: 30px;
+    line-height: 15px;
+}
+
+#subtitle {
+    color: #006EB6;
+    font-size: 20px;
+    letter-spacing: 0.2em;
+}
+
+hr {
+    height: 50%;
+}
+
+main {
+    line-height: 1.5;
+}
+
+li {
+    padding-bottom: 20px;
+}
+
+.logo {
+    display: block;
+    margin: auto;
+    max-width: 150px;
+    padding-top: 15px;
+}
