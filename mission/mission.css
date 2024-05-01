@@ -47,3 +47,25 @@ li {
     max-width: 150px;
     padding-top: 15px;
 }
+
+footer {
+    padding: 10px;
+    display: table;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dark {
+    background-color: #333;
+    color: white;
+    border: solid white 1px;
+}
+
+.dark #subtitle {
+    color:#73beef;
+}
+
+#theme {
+    margin-top: 25px;
+}
