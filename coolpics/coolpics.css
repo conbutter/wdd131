@@ -29,7 +29,7 @@ header h1 {
     margin: 20px 0 10px 0;
 }
 
-.menu {
+.menuButton {
     margin-bottom: 15px;
     font-size: 1.2em;
     color: white;
@@ -37,6 +37,10 @@ header h1 {
     padding: 0;
     border: none;
     background: none;
+}
+
+.hide {
+	display: none;
 }
 
 a {
@@ -56,15 +60,6 @@ main h2 {
     padding: 0;
 }
 
-.gallery {
-    /* CODE BELOW ONLY APPLIES IN DESKTOP VIEW */
-    /* margin: 0 auto;
-    max-width: 75%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding-bottom: 25px; */
-}
-
 img {
 	max-width: 100%;
     width: 250px;
@@ -80,6 +75,37 @@ footer {
     text-align: center;
 }
 
+/* Modal Content */
+
+.viewer {
+    position: fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    margin: 25px;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.9fr 0.1fr 1fr 1fr;
+}
+
+.viewer img {
+    margin: 0 auto;
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+
+.close-viewer {
+    background-color: transparent;
+    color: white;
+    margin: 0 0 0 240px;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    border: none;
+    cursor: pointer;
+}
+
 /* Media Query Content */
 
 @media screen and (min-width: 700px) {
@@ -92,7 +118,7 @@ footer {
 }
 
 @media screen and (min-width: 1000px) {
-    .menu {
+    .menuButton {
         display: none;
     }
 
