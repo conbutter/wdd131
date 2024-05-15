@@ -1,8 +1,5 @@
 const menuButton = document.querySelector("#menuButton");
-function toggleMenu() {
-  const menu = document.querySelector(".menu");
-  nav.classList.toggle("hide");
-}
+const imageGallery = document.querySelector(".gallery");
 
 function toggleMenu() {
     const menu = document.querySelector(".menu");
@@ -23,26 +20,32 @@ function handleResize() {
 }
 
 function viewerTemplate(path, alt_text) {
-    return `<div class="viewer">
-        <button class="close-viewer">X</button>
-        <img src="${path}" alt="${alt_text}">
+    return `
+        <div class="viewer">
+            <button class="close-viewer">X</button>
+            <img src="${path}" alt="${alt_text}">
         </div>`;
 }
 
 function viewHandler(event) {
-    const clickElement = 
-    // create a variable to hold the element that was clicked on from event.target
-
-	// get the src attribute from that element and 'split' it on the "-"
-
-	// construct the new image file name by adding "-full.jpeg" to the first part of the array from the previous step
-
-	// insert the viewerTemplate into the top of the body element
-	// (element.insertAdjacentHTML("afterbegin", htmltoinsert))
-
-	// add a listener to the close button (X) that calls a function called closeViewer when clicked
+    const clickedElement = event.target;
+    const srcValue = clickedElement.getAttribute('src');
+    const splitArray = srcValue.split("-");
+    const newArray = splitArray[0] + "-full.jpeg";
+    document.body.insertAdjacentHTML("afterbegin", viewerTemplate(newArray, 'Mountains'));
+    const closeButton = document.querySelector(".close-viewer");
+    closeButton.addEventListener("click", closeViewer);
 }
 
-  handleResize();
-  menuButton.addEventListener("click", toggleMenu);
-  window.addEventListener("resize", handleResize);
+function closeViewer(event) {
+    const viewerDiv = event.target.closest('.viewer');
+    if (viewerDiv) {
+        viewerDiv.remove();
+    }
+}
+
+handleResize();
+
+imageGallery.addEventListener("click", viewHandler);
+menuButton.addEventListener("click", toggleMenu);
+window.addEventListener("resize", handleResize);

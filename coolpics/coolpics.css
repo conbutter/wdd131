@@ -62,8 +62,6 @@ main h2 {
 
 img {
 	max-width: 100%;
-    width: 250px;
-    max-height: 100%;
     object-fit: cover;
     border: 2px white solid;
     box-shadow: 3px 3px 10px rgb(31, 31, 31);
@@ -83,25 +81,28 @@ footer {
     left:0;
     bottom:0;
     right:0;
-    margin: 25px;
     background-color: rgba(0, 0, 0, 0.75);
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.9fr 0.1fr 1fr 1fr;
+    grid-template-columns: 50px 1fr 50px;
+    /* grid-template-rows: 0.9fr 0.1fr 1fr 1fr; */
+    max-height: 100%;
 }
 
 .viewer img {
     margin: 0 auto;
     grid-column: 2/3;
-    grid-row: 3/4;
+    max-height: 100%;
+    max-width: 100%;
+    /* grid-row: 3/4; */
 }
 
 .close-viewer {
     background-color: transparent;
     color: white;
-    margin: 0 0 0 240px;
+    text-align: right;
+    /* margin: 0 0 0 240px; */
     grid-column: 2/3;
-    grid-row: 2/3;
+    /* grid-row: 2/3; */
     border: none;
     cursor: pointer;
 }
@@ -115,6 +116,9 @@ footer {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
     }
+    .viewer {
+        margin: 25px;
+    }
 }
 
 @media screen and (min-width: 1000px) {
@@ -124,5 +128,9 @@ footer {
 
     a {
         display: inline;
+    }
+
+    .viewer img {
+        max-width: 65%;
     }
 }
