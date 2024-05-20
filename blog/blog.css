@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+:root {
+    --gold-color: #EFC69B;
+    --red-color: #AF1B3F;
+    --dark-color: #473144;
+  
+    --heading-font: "Lora", Impact, serif;
+    --paragraph-font: Helvetica, Arial, sans-serif;
+  }
+
+/* --------------- */
+/*  HTML Elements  */
+/* --------------- */
+  
+html {
+    font-family: var(--paragraph-font);
+}
+
+h1, h2 {
+    font-family: var(--heading-font);
+}
+
+h1 {
+    font-size: 2em;
+    color: var(--dark-color);
+}
+
+h2 {
+    font-size: 1.5em;
+    color: var(--red-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--red-color);
+}
+
+p {
+    color: var(--dark-color);
+    font-size: 1.0em;
+}
+
+/* ----------------- */
+/*  Header Elements  */
+/* ----------------- */
+
+#site-title {
+    text-align: center;
+    padding: 25px 0 25px 0;
+}
+
+.nav {
+    border: 10px;
+    text-align: right;
+    padding: 15px;
+    border: var(--gold-color) 2px;
+    border-style: solid none;
+}
+
+.nav a {
+    color: var(--red-color);
+    padding-right: 25px;
+    font-size: 1.1em;
+}
+
+/* --------------- */
+/*  Main Elements  */
+/* --------------- */
+
+.content {
+    display: grid;
+    padding: 0 25px 0 25px;
+    grid-template-columns: 0.8fr 0.2fr;
+}
+
+.filters {
+    border: var(--gold-color) 2px solid;
+    margin-top: 15px;
+    padding: 0 10px 0 10px;
+}
+
+/* ----------------- */
+/*  Footer Elements  */
+/* ----------------- */
+
+
+
+/* ---------------------- */
+/*  Media Query Elements  */
+/* ---------------------- */
