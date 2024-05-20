@@ -72,6 +72,16 @@ nav a {
     font-size: 1.1em;
 }
 
+.skiptocontent a {
+	position: absolute;
+    top: -40px;
+    background-color: black;
+    color: white;
+}
+.skiptocontent a:focus {
+	top: 0;
+}
+
 /* --------------- */
 /*  Main Elements  */
 /* --------------- */
