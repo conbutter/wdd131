@@ -99,16 +99,40 @@ nav a {
 .book-group {
     display: grid;
     grid-template-columns: 0.3fr 1fr;
+    margin-bottom: 30px;
 }
 
 .book-left-elements {
     grid-column: 1/2;
     display: inline-block;
+    text-align: right;
+    border-right: 2px solid var(--gold-color);
+    margin-right: 25px;
+    padding-right: 25px;
+}
+
+.book-left-elements p {
+    line-height: 15px;
+}
+
+.book-date {
+    font-size: 1.2em;
+}
+
+.book-title {
+    margin-top: 10px;
+    padding-top: 0;
 }
 
 .book-right-elements {
     grid-column: 2/3;
     padding-right: 10px;
+}
+
+.book-cover {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .filters {
@@ -122,7 +146,9 @@ nav a {
 /*  Footer Elements  */
 /* ----------------- */
 
-
+footer p {
+    padding: 15px;
+}
 
 /* ---------------------- */
 /*  Media Query Elements  */
