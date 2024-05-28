@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Divider Example</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two equal columns */
+            gap: 0; /* No gap between columns */
+        }
+
+        .grid-item {
+            padding: 20px; /* Space around content */
+        }
+
+        .grid-item.left {
+            border-right: 1px solid #f0e68c; /* Faint yellow vertical line */
+        }
+
+        .grid-item.right {
+            /* No additional styles needed */
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item left">
+            <p>Left content goes here.</p>
+        </div>
+        <div class="grid-item right">
+            <p>Right content goes here.</p>
+        </div>
+    </div>
+</body>
+</html>
