@@ -19,14 +19,14 @@
                 <label class=".front-full-right" for="card-name">EXPIRATION</label>
                 <input class=".front-full-left" type="text" placeholder="JOHN DOE" name="card-name" required>
                 <div class="get-in-the-right-spot-or-else">
-                    <input id="kill-size1" name="exp-mm" type="text" placeholder="MM" required>
-                    <input id="kill-size2" name="exp-yy" type="text" placeholder="YY" required>
+                    <input id="kill-size1" name="exp-mm" type="text" placeholder="MM" required pattern="[0-9]{2}">
+                    <input id="kill-size2" name="exp-yy" type="text" placeholder="YY" required pattern="[0-9]{2}">
                 </div>
             </div>
             <div id="card-bar"></div>
             <div class="card-side" id="card-back">
                 <label class="display-right" id="top-display" for="cvc">CVC/CVV</label>
-                <input class="display-right" id="full-display" type="text" placeholder="xxx" name="cvc" required>
+                <input class="display-right" id="full-display" type="text" placeholder="xxx" name="cvc" pattern="[0-9]{3}" required>
             </div>
             <input type="submit" id="submit-button" value="Submit">
         </form>
