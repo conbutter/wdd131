@@ -119,4 +119,13 @@ body, html {
     grid-row: 12 / 13;
     align-self: center;
     justify-self: center;
+    justify-content: center;
+    align-content: center;
+    text-align: right;
+    border-radius: 5px;
+    display: flex;
+    padding: 10px 20px;
+    border: 1px solid #000; /* Black border */
+    cursor: pointer;
+    background-color: #fff; /* White background */
 }
