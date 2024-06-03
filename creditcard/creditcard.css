@@ -78,15 +78,38 @@ body, html {
     grid-column: 2 / 5;
     grid-row: 4 / 6;
     z-index: 2;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 200px 100px;
+    grid-gap: 5px;
+    padding: 10px;
 }
 
 #card-back {
-    background-color: rgb(168, 168, 168);
+    background-color: rgb(194, 194, 194);
     grid-column: 2 / 5;
     grid-row: 3 / 11;
     border-radius: 15px;
     z-index: 1;
     width: 100%;
+    display: grid;
+    grid-template-rows: 105px 25px 25px;
+    grid-template-columns: 220px 80px;
+    padding: 10px;
+}
+
+.display-right {
+    grid-column: 2 / 3;
+}
+
+#top-display {
+    height: 100%;
+    grid-row: 2 / 3;
+}
+
+#full-display {
+    height: 100%;
+    grid-row: 3 / 4;
 }
 
 /* SUBMIT */
