@@ -98,7 +98,6 @@ input:hover::placeholder {
   width: 48%;
 }
 
-/* Style checkbox and radio. To do this we have to hide the defaults then we create our own */
 input[type="radio"] {
   display: none;
 }
