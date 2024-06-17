@@ -140,10 +140,12 @@ p {
     font-size: 1em;
     color: var(--primary-color);
     font-family: var(--primary-font);
+    padding-bottom: 15px;
 }
 
 .bottom-page-item {
     max-width: 15%;
+    padding-bottom: 15px;
 }
 
 @media screen and (min-width: 640px) {
@@ -167,6 +169,17 @@ p {
 
     .recipe-description {
         display: flex;
+    }
+
+    .bottom-page-item {
+        max-width: 50%;
+        padding: 0;
+        margin: 0;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: row;
     }
 }
 
