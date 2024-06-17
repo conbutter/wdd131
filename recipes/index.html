@@ -3,48 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | RecipeBook</title>
+    <title property="og:title">Home | RecipeBook</title>
     <link rel="stylesheet" href="recipes.css" />
+    <meta property="og:type" content="website" />
     <script src="main.js" defer type="module"></script>
-    <meta name="description" content="RecipeBook, the site for good recipes!">
+    <meta property="og:description" content="RecipeBook, the site for good recipes!">
     <meta author="Connor Butterfield">
     <link rel="icon" type="image/x-icon" href="favicon.png">
   </head>
 </head>
 <body>
     <header>
-        <img src="images/recipe-book.png" alt="RecipeBook logo">
-        <h1>RecipeBook</h1>
+        <img class="logo" src="images/recipe-book.png" alt="RecipeBook logo">
+        <h1 class="site-name">RecipeBook</h1>
     </header>
     <main>
-        <form>
-            <input type="text" placeholder="Search for...">
+        <form class="search-form">
+            <input class="search-box "type="text" placeholder="Find a recipe">
+            <input class="search-button" type="image" name="submit" src="images/search.svg" alt="Submit">
         </form>
+        <div class="divider-line"></div>
         <div class="recipe-display">
             <!-- INSERT RECIPES HERE THROUGH JS -->
-            <div class="recipe"></div>
+            <div class="recipe">
                 <img class="recipe-img" src="images/apple-crisp.jpg" alt="Apple crisp with ice cream">
-                <p class="recipe-tag">dessert</p>
-                <h2 class="recipe-name">Apple Crisp</h2>
-                <span class="rating" role="img" aria-label="Rating: 4 out of 5 stars">
-                    <span aria-hidden="true" class="icon-star">⭐</span>
-                    <span aria-hidden="true" class="icon-star">⭐</span>
-                    <span aria-hidden="true" class="icon-star">⭐</span>
-                    <span aria-hidden="true" class="icon-star-empty">⭐</span>
-                    <span aria-hidden="true" class="icon-star-empty">☆</span>
-                </span>
-                <p class="recipe-description">This apple crisp recipe is a simple yet delicious fall
-                     dessert that's great served warm with vanilla ice cream.</p>
+                <div class="recipe-right">
+                    <p class="recipe-tag">dessert</p>
+                    <div class="name-and-rating">
+                        <h2 class="recipe-name">Apple Crisp</h2>
+                        <span class="rating" role="img" aria-label="Rating: 4 out of 5 stars">
+                            <span aria-hidden="true" class="icon-star">⭐</span>
+                            <span aria-hidden="true" class="icon-star">⭐</span>
+                            <span aria-hidden="true" class="icon-star">⭐</span>
+                            <span aria-hidden="true" class="icon-star-empty">⭐</span>
+                            <span aria-hidden="true" class="icon-star-empty">☆</span>
+                        </span>
+                    </div>
+                    <p class="recipe-description">This apple crisp recipe is a simple yet delicious fall
+                        dessert that's great served warm with vanilla ice cream.</p>
+                </div>
         </div>
     </main>
     <footer>
-        <div class="social">
-            <!-- Social media icons provided under CC from https://www.iconfinder.com/AlfredoCreates  -->
-            <a href="#"><img src="images/instagram_icon.svg" alt="instagram icon"></a>
-            <a href="#"><img src="images/youtube_icon.svg" alt="youtube icon"></a>
-            <a href="#"><img src="images/pinterest_icon.svg" alt="pinterest icon"></a>
-        </div>
-        <a href="https://www.flaticon.com/free-icons/recipe" title="recipe icons">Recipe icons created by Freepik - Flaticon</a>
+            <div class="social">
+                <!-- Social media icons provided under CC from https://www.iconfinder.com/AlfredoCreates  -->
+                <a href="#"><img class="bottom-page-item" src="images/instagram_icon.svg" alt="instagram icon"></a>
+                <a href="#"><img class="bottom-page-item" src="images/youtube_icon.svg" alt="youtube icon"></a>
+                <a href="#"><img class="bottom-page-item" src="images/pinterest_icon.svg" alt="pinterest icon"></a>
+            </div>
+            <a class="attribute" href="https://www.flaticon.com/free-icons/recipe" title="recipe icons">Recipe icons created by Freepik - Flaticon</a>
     </footer>
 </body>
 </html>

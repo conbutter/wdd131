@@ -1,6 +1,178 @@
-/* So that attribution link at the bottom of our site is not the most attractive thing.
-We can minimize the size (And you should. Try 0.6em), so it is less noticiable, but it
-will still stick out. What if we don't want to attribute? That is easy...be willing to
-pay to use the resources. All of these sites remove the attribution requirement if you
-pay :) */
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
 
+:root {
+    --primary-color: #1B98E0;
+    --secondary-color: #59c3c3;
+    --text-dark: #333;
+    --text-light: #ebebeb;
+    --primary-font: Arial, Helvetica,sans-serif;
+    --secondary-font: "Amatic SC";
+    }
+
+header {
+    display: flex;
+    text-align: center;
+    max-width: fit-content;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    max-width: 15%;
+}
+
+header h1 {
+    font-size: 4em;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    margin: 15px;
+    font-family: var(--secondary-font);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    margin: 0 auto;
+}
+
+p {
+    font-family: var(--primary-font);
+    font-size: 1.1em;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    border: black 1px solid;
+    border-radius: 5px;
+}
+
+.search-box {
+    max-width: 100%;
+    outline: none;
+    flex-grow: 1;
+    font-size: 1.1em;
+    text-align: left;
+    border: none;
+    padding: 5px;
+    height: 25px;
+}
+
+.search-button {
+    border-left: 1px black solid;
+    max-height: 25px;
+    padding: 5px;
+    margin-left: auto;
+}
+
+.divider-line {
+    height: 3px;
+    background-color: black;
+    opacity: 25%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.recipe {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 1px black solid;
+    max-width: 100%;
+    padding: 10px;
+    margin: 15px;
+}
+
+.recipe-description {
+    display: none;
+}
+
+.recipe-img {
+    max-width: 100%;
+    object-fit: cover;
+    max-height: 300px;
+}
+
+.recipe-right {
+    padding-top: 10px;
+}
+
+.recipe-tag {
+    display: inline;
+    border: 1px black solid;
+    padding: 7px;
+}
+
+.name-and-rating {
+    padding-bottom: 15px;
+}
+
+.recipe-name {
+    font-size: 2.2em;
+    margin-bottom: 0;
+    color: var(--primary-color);
+    font-family: var(--secondary-font);
+}
+
+.footer {
+    width: 100%;
+}
+
+.social {
+    text-align: center;
+    flex-direction: row;
+    height: 100%;
+}
+
+.attribute {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    font-size: 1em;
+    color: var(--primary-color);
+    font-family: var(--primary-font);
+}
+
+.bottom-page-item {
+    max-width: 15%;
+}
+
+@media screen and (min-width: 640px) {
+    /* .gallery {
+        margin: 0 auto;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .viewer {
+        margin: 25px;
+    } */
+    .recipe {
+        flex-direction: row;
+    }
+
+    .recipe-right {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .recipe-description {
+        display: flex;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    html {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+}
