@@ -145,8 +145,10 @@ p {
 }
 
 .bottom-page-item {
-    max-width: 100px;
-    padding-bottom: 25px;
+    max-width: 75px;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-bottom: 20px;
 }
 
 @media screen and (min-width: 640px) {
@@ -176,6 +178,8 @@ p {
         width: 30px;
         height: auto;
         padding-bottom: 0;
+        padding-left: 0px;
+        padding-right: 0px;
     }
 
     footer {
