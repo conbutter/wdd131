@@ -93,6 +93,9 @@ p {
   width: 25%;
   height: 3em;
 }
+.wireframe {
+  max-width: 50%;
+}
 
 .primary {
   background-color: var(--primary-color);
