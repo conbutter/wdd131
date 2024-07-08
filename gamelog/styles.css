@@ -1,0 +1,519 @@
+/* ------------- */
+/* UNIVERSAL CSS */
+/* ------------- */
+
+@import url("https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC|Lato");
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+
+#content {
+   max-width: 1600px;
+   margin: 0 auto;
+}
+
+body {
+   background-color: #fcfbfb; 
+   margin: 0;
+}
+
+/* Button Content */
+      
+.learn-more{
+   background-color: #392B58;
+   color: white;
+   text-decoration: none;
+   font-size: 18px;
+   padding: 15px 30px;
+   margin-top: 50px;
+   border-radius: 5px;
+   opacity: 90%;
+}
+   .learn-more:hover {
+       color: #B6CACE;
+       background-color: #645E9D;
+       text-shadow: 1.5px 1.5px #000000;
+   }
+
+.dark-mode{
+   background-color: #392B58;
+   color: #776fbc;
+   border: 2px solid #776fbc;
+   text-decoration: none;
+   font-size: 18px;
+   padding: 15px 30px;
+   margin-top: 50px;
+   border-radius: 5px;
+   opacity: 90%;
+}
+   .dark-mode:hover {
+      color: #B6CACE;
+      border: 2px solid #392B58;
+      background-color: #645E9D;
+      text-shadow: 1.5px 1.5px #000000;
+   }
+
+/* ---------- */
+/* HEADER CSS */
+/* ---------- */
+
+header {
+   background-color: #392B58;
+}
+
+nav {
+   display: flex;
+   justify-content: space-between; /* Space between elements */
+   align-items: center;
+   padding: 0 20px; /* Add some padding for spacing */
+}
+
+.nav-left {
+   display: flex;
+   align-items: center;
+}
+
+nav a {
+   text-align: center;
+   color: white;
+   text-decoration: none;
+   padding: 15px;
+}
+
+#nav1, #nav3 {
+   text-align: center;
+   text-decoration: none;
+   padding: 49.5px 35px;
+   font-size: 20px;
+   font-family: "Dela Gothic One", "IM Fell French Canon SC";
+}
+
+nav a:hover {
+   color: #B6CACE;
+   background-color: #645E9D;
+}
+
+.button-box {
+   margin-left: auto; /* Pushes the button box to the far right */
+}
+
+.logo {
+   width: 80px; /* Set a reasonable width for the logo */
+   height: auto; /* Maintain aspect ratio */
+}
+
+
+/* ---------- */
+/* FOOTER CSS */
+/* ---------- */
+
+footer {
+   display: grid;
+   background-color: rgb(31, 31, 31);
+}
+
+.footer-main {
+   padding-left: 25px;
+   color: rgb(142, 142, 142);
+   font-family: "Play", Lato, Helvetica, sans-serif;
+}
+
+footer a {
+   color: rgb(222, 222, 222);
+   font-family: "Play", Lato, Helvetica, sans-serif;
+}
+
+footer a:hover {
+   color: #B6CACE;
+}
+
+footer p {
+   font-size: 15px;
+}
+
+#logo-footer {
+   grid-column: 2/3;
+   padding: 15px;
+   padding-right: 25px;
+}
+
+.social-footer {
+   width: 3%;
+   margin: 0 auto;
+}
+
+.logo-footer {
+   width: 175px;
+   margin: 0 auto;
+}
+
+/* ------------- */
+/* HOME PAGE CSS */
+/* ------------- */
+
+/* Hero Section */
+
+#hero {
+   display: grid;
+   grid-template-columns: 1fr 3fr 1fr;
+}
+
+#hero-box {
+   grid-column: 1/4;
+   grid-row: 1/3;
+   z-index: -1;
+   height: 530px;
+}
+
+.hero-img {
+   max-width: 100%;
+   margin: -190px 0 0 0;
+}
+
+#hero-msg {
+   padding-top: 20px;
+   grid-column: 2/3;
+   grid-row: 1/2;
+   margin-top: 100px;
+   font-size: 25px;
+}
+
+#hero-msg h1, #hero-msg h4 { 
+   text-align: center;
+   font-family: "Dela Gothic One", "IM Fell French Canon SC";
+   color: white;
+   text-shadow: 2px 2px 5px #271c3e;
+}
+
+#hero-msg h4 {
+   font-family: "Play", Lato, Helvetica, sans-serif;
+}
+
+.button-box { 
+   padding: 7.5px 0;
+   font-family: "Play", Lato, Helvetica, sans-serif;
+   text-align: center;
+}
+
+/* Main Section */
+
+.home-intro {
+   height: 200px;
+   padding-top: 5px;
+   padding-bottom: 45px;
+   padding-left: 50px;
+   padding-right: 50px;
+   background-color: #2F4567;
+   z-index: 0;
+   border: 20px white solid;
+}
+
+.home-intro h1 {
+   font-family: "Dela Gothic One", "IM Fell French Canon SC";
+   font-size: 40px;
+   color: white;
+}
+
+.home-intro p {
+   font-family: "Play", Lato, Helvetica, sans-serif;
+   font-size: 22.5px;
+   margin: -25px 0px 20px;
+   color: white;
+}
+
+/* "The Basics" Section */
+
+.the-basics {
+   display: grid;
+   grid-template-columns: 50px 1fr 1fr 50px;
+   padding-bottom: 35px;
+}
+
+.the-basics h2 {
+   font-family: "Dela Gothic One", "IM Fell French Canon SC";
+   font-size: 40px;
+}
+
+.the-basics p {
+   font-family: "Play", Lato, Helvetica, sans-serif;
+   font-size: 22.5px;
+}
+
+.the-basics li {
+   font-family: "Play", Lato, Helvetica, sans-serif;
+   font-size: 22.5px;
+   margin: 10px 0;
+}
+
+.basics-text-hold {
+   grid-column: 2/3;
+}
+
+.basics-img {
+   max-width: 100%;
+   margin: 50px;
+   /* padding-right: 100px; Had a really cool "slid-in" effect, but it extended the page to the side. 
+   Disabled for now until I figure out how to fix the extension.*/
+   border-radius: 50px;
+   display: flex;
+}
+
+.basics-image-hold {
+   grid-column: 3/4;
+   grid-row: 1/3;
+}
+
+.basics-caption {
+   margin: -25px 0 0 50px;
+   color: rgb(72, 72, 72);
+}
+
+/* Card Section */
+
+.home-card {
+   display: grid;
+   padding-top: 50px;
+   padding-bottom: 50px;
+   background-color: #2F4567;
+   z-index: -1;
+   grid-template-columns: .5fr 1fr 1fr 1fr 1fr 1fr .5fr;
+}
+
+.home-card-img {
+   width: 100%;
+   grid-column: 2/5;
+   z-index: 0;
+   border-radius: 20px;
+   grid-row: 2/5;
+}
+
+.home-msg {
+   background-color: #2D499B;
+   color: white;
+   height: 275px;
+   padding: 15px;
+   vertical-align: middle;
+   border-radius: 20px;
+   grid-column: 4/7;
+   grid-row: 3/4;
+   text-align: center;
+   z-index: 1;
+}
+
+.home-msg h2 {
+   font-size: 2em;
+   color: white;
+   font-family: "Dela Gothic One", "IM Fell French Canon SC";
+}
+
+.home-msg p {
+   font-size: 1.2em;
+   padding-left: 10px;
+   padding-right: 10px;
+   padding-bottom: 10px;
+   font-family: "Play", Lato, Helvetica, sans-serif;
+}
+
+/* ---------------- */
+/* HISTORY PAGE CSS */
+/* ---------------- */
+
+.history-intro {
+   padding-bottom: 10px;
+   padding-top: 5px;
+   padding-bottom: 45px;
+   padding-left: 50px;
+   padding-right: 50px;
+   background-color: #2F4567;
+}
+
+.history-intro h1 { 
+   text-align: center;
+   font-family: "Dela Gothic One", "IM Fell French Canon SC";
+   color: white;
+   font-size: 2em;
+}
+
+.history-intro h3 {
+   text-align: center;
+   font-family: "Play", Lato, Helvetica, sans-serif;
+   color: white;
+   font-size: 1.4em;
+   margin: -10px;
+}
+
+.history-info {
+   margin-left: 50px;
+   margin-right: 50px;
+   margin-top: 25px;
+   margin-bottom: 25px;
+}
+
+.history-info p {
+   font-family: "Play", Lato, Helvetica, sans-serif;
+   font-size: 1.2em;
+}
+
+.history-img-hold {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-gap: 10px;
+   background-color: #d3d4d9;
+   padding: 15px;
+   border-radius: 20px;
+}
+
+.history-img {
+   max-width: 100%;
+   border-radius: 10px;
+}
+
+.history-img-cap {
+   margin: 5px;
+   font-family: "Play", Lato, Helvetica, sans-serif;
+   color: rgb(44, 44, 44);
+}
+
+   #history-img-1 {
+      grid-column: 1/2;
+      grid-row: 1/2;
+   }
+
+   #history-img-2 {
+      grid-column: 2/3;
+      grid-row: 1/2;
+   }
+
+   #history-img-cap-1 {
+      grid-column: 1/2;
+      grid-row: 2/3;
+   }
+
+   #history-img-cap-2 {
+      grid-column: 2/3;
+      grid-row: 2/3;
+   }
+
+.history-ride-list {
+   font-size: 1.3em;
+   height: 200px;
+   padding-top: 5px;
+   padding-bottom: 45px;
+   padding-left: 50px;
+   padding-right: 50px;
+   background-color: #2F4567;
+   z-index: 0;
+   color: white;
+   border: 20px white solid;
+   font-family: "Play", Lato, Helvetica, sans-serif;
+}
+
+.history-ride-list h2 {
+   font-family: "Dela Gothic One", "IM Fell French Canon SC";
+}
+
+/* ---------------- */
+/* SECRETS PAGE CSS */
+/* ---------------- */
+
+.secrets-intro {
+   padding-bottom: 10px;
+   padding-top: 5px;
+   padding-bottom: 45px;
+   padding-left: 50px;
+   padding-right: 50px;
+   background-color: #2F4567;
+}
+
+.secrets-intro h1 { 
+   text-align: center;
+   font-family: "Dela Gothic One", "IM Fell French Canon SC";
+   color: white;
+   font-size: 2em;
+}
+
+.secrets-intro h3 {
+   text-align: center;
+   font-family: "Play", Lato, Helvetica, sans-serif;
+   color: white;
+   font-size: 1.4em;
+   margin: -10px;
+}
+
+.secrets-info {
+   margin-left: 50px;
+   margin-right: 50px;
+   margin-top: 25px;
+   margin-bottom: 25px;
+}
+
+.secrets-card {
+   padding-left: 25px;
+   padding-right: 25px;
+   margin-top: 25px;
+   margin-bottom: 25px;
+   border: #2F4567 5px solid;
+   border-radius: 10px;
+   background-color: rgb(205, 205, 205);
+}
+
+.secrets-card-w-pic {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   padding-left: 25px;
+   padding-right: 25px;
+   margin-top: 25px;
+   margin-bottom: 25px;
+   border: #2F4567 5px solid;
+   border-radius: 10px;
+   background-color: rgb(205, 205, 205);
+   grid-column-gap: 20px;
+}
+
+.secrets-card-img-hold {
+   grid-column: 2/3;
+}
+
+.secrets-card-img {
+   max-width: 100%;
+   border-radius: 25px;
+}
+
+.secrets-info p {
+   color: black;
+   font-family: "Play", Lato, Helvetica, sans-serif;
+   font-size: 1.2em;
+}
+
+.secrets-card-flair-text {
+   font-family: "Dela Gothic One", "IM Fell French Canon SC";
+   margin-bottom: -5px;
+   color: black;
+   text-shadow: 1px 1px 1px #DCF951;
+   letter-spacing: 5px;
+}
+
+.secrets-card-title {
+   color: #2D499B;
+}
+
+.secrets-card p {
+   padding-bottom: 25px;
+   margin: 0;
+}
+
+.secrets-card-img p{
+   margin: 0;
+}
+
+.secrets-card-para-img {
+   margin: 0
+}
+
+.secrets-card-title {
+   font-family: "Dela Gothic One", "IM Fell French Canon SC";
+   grid-column: 1/3;
+}
+
+/* ---------- */
+/* END OF CSS */
+/* ---------- */
