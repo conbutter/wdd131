@@ -33,6 +33,53 @@
                     <input class="search-button" type="image" name="submit" src="images/search.svg" alt="Submit">
                 </form>
             </div>
+            <section class="add-form" id="add-form" style="display: none;">
+                <form id="game-add-form">
+                    <label for="game-name">Game Name:</label>
+                    <input type="text" id="game-name" name="game-name" required><br>
+            
+                    <label for="game-platform">Game Platform:</label>
+                    <select id="game-platform" name="game-platform" multiple required>
+                        <option value="Steam">Steam</option>
+                        <option value="PlayStation">PlayStation</option>
+                        <option value="Xbox">Xbox</option>
+                        <option value="Nintendo">Nintendo</option>
+                        <option value="Other">Other</option>
+                    </select><br>
+            
+                    <label for="game-rating">Game Rating:</label>
+                    <select id="game-rating" name="game-rating" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select><br>
+            
+                    <label for="game-favorite">Game Favorite:</label>
+                    <select id="game-favorite" name="game-favorite" required>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select><br>
+            
+                    <label for="game-description">Game Description:</label>
+                    <textarea id="game-description" name="game-description" required></textarea><br>
+            
+                    <label for="game-notes">Game Notes:</label>
+                    <textarea id="game-notes" name="game-notes"></textarea><br>
+            
+                    <label for="game-store-page">Game Store Page:</label>
+                    <input type="url" id="game-store-page" name="game-store-page"><br>
+            
+                    <label for="game-website">Game Website:</label>
+                    <input type="url" id="game-website" name="game-website"><br>
+            
+                    <input type="submit" value="Add Game">
+                </form>
+            </section>
+            <section class="remove-form" id="remove-form" style="display: none;">
+                <p>Placeholder text for the remove form section.</p>
+            </section>
             <div class="divider-line"></div>
             <div class="game-display">
                 <!-- INSERT GAMES HERE THROUGH JS -->
@@ -46,19 +93,21 @@
                                 <span aria-hidden="true" class="icon-star">⭐</span>
                                 <span aria-hidden="true" class="icon-star">⭐</span>
                                 <span aria-hidden="true" class="icon-star">⭐</span>
-                                <span aria-hidden="true" class="icon-star-empty">⭐</span>
+                                <span aria-hidden="true" class="icon-star">⭐</span>
                                 <span aria-hidden="true" class="icon-star-empty">☆</span>
                             </span>
                         </div>
-                        <p class="game-description">A soulslike adventure set in a crumbling underwater world.</p>
+                        <p class="game-user-description"><b>Your Notes: </b>Quality game, had a lot of fun with it.</p>
+                        <p class="game-description"><i>A soulslike adventure set in a crumbling underwater world.</i></p>
                         <div class="game-links">
                             <a id="link-store" class="game-link" href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://store.steampowered.com/app/1887840/Another_Crabs_Treasure/&ved=2ahUKEwiHn-vT9pyHAxV3DTQIHVhICQkQFnoECB4QAQ&usg=AOvVaw3GRaqttUjscScSrt5_hbBG">Store Page</a>
                             <a id="link-website" class="game-link" href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://aggrocrab.com/ACT&ved=2ahUKEwjg3f3Y9pyHAxXCMDQIHQW9AFkQFnoECHMQAQ&usg=AOvVaw3rJic0kr9KJTHOeguVFjDd">Website</a>
                         </div>
                     </div>
                     <div class="game-far-right">
-                        <a class="adjust-button" id='favorite-button'>❤</a>
-                        <a class="adjust-button" id='remove-button'>✕</a>
+                        <a class="game-adjust-button" id='favorite-button'>❤</a>
+                        <a class="game-adjust-button" id='edit-button'>✎</a>
+                        <a class="game-adjust-button" id='remove-button'>✕</a>
                     </div>
                 </div>
         </main>
