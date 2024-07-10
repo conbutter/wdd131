@@ -8,6 +8,8 @@ function switchVisualMode() {
     const searchImg = document.querySelector(".search-button");
     const searchForm = document.querySelector(".search-form");
     const searchBox = document.querySelector(".search-box");
+    const gameContainer = document.querySelector(".game")
+    const gameTag = document.querySelector(".game-tag");
     const gameEditButtons = document.querySelectorAll(".game-adjust-button");
     const darkModeButton = document.querySelector(".dark-mode");
 
@@ -19,8 +21,10 @@ function switchVisualMode() {
         footer.style.backgroundColor = "#1f1f1f";
         searchImg.src = "images/search_white.svg";
         searchForm.style.borderColor = "white";
-        searchBox.style.backgroundColor = "#333333";
+        searchBox.style.backgroundColor = "#121212";
         searchBox.style.color = "#ffffff";
+        gameContainer.style.borderColor = "white";
+        gameTag.style.borderColor = "white";
         gameEditButtons.forEach(button => button.style.color = "#ffffff");
         darkModeButton.textContent = "Light Mode";
     } else {
@@ -33,6 +37,8 @@ function switchVisualMode() {
         searchForm.style.borderColor = "black";
         searchBox.style.backgroundColor = "#ffffff";
         searchBox.style.color = "#000000";
+        gameContainer.style.borderColor = "black";
+        gameTag.style.borderColor = "black";
         gameEditButtons.forEach(button => button.style.color = "#000000");
         darkModeButton.textContent = "Dark Mode";
     }
@@ -47,6 +53,9 @@ function applyVisualMode() {
     const searchImg = document.querySelector(".search-button");
     const searchForm = document.querySelector(".search-form");
     const searchBox = document.querySelector(".search-box");
+    const gameContainer = document.querySelector(".game")
+    const gameTag = document.querySelector(".game-tag");
+    const gameEditButtons = document.querySelectorAll(".game-adjust-button");
     const darkModeButton = document.querySelector(".dark-mode");
 
     if (darkMode == 1) {
@@ -56,8 +65,11 @@ function applyVisualMode() {
         footer.style.backgroundColor = "#1f1f1f";
         searchImg.src = "images/search_white.svg";
         searchForm.style.borderColor = "white";
-        searchBox.style.backgroundColor = "#333333";
+        searchBox.style.backgroundColor = "#121212";
         searchBox.style.color = "#ffffff";
+        gameContainer.style.borderColor = "white";
+        gameTag.style.borderColor = "white";
+        gameEditButtons.forEach(button => button.style.color = "#ffffff");
         darkModeButton.textContent = "Light Mode";
     } else {
         body.style.backgroundColor = "#fcfbfb";
@@ -68,6 +80,9 @@ function applyVisualMode() {
         searchForm.style.borderColor = "black";
         searchBox.style.backgroundColor = "#ffffff";
         searchBox.style.color = "#000000";
+        gameContainer.style.borderColor = "black";
+        gameTag.style.borderColor = "black";
+        gameEditButtons.forEach(button => button.style.color = "#000000");
         darkModeButton.textContent = "Dark Mode";
     }
 }

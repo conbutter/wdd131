@@ -279,10 +279,19 @@ body.dark-mode .search-box {
    max-width: 100%;
    object-fit: cover;
    max-height: 300px;
+   border-radius: 10px;
 }
 
 .game-right {
    padding-top: 10px;
+}
+
+.tag-and-rating {
+   padding-top: 15px;
+}
+
+.rating {
+   padding-left: 5px;
 }
 
 .game-far-right {
@@ -293,9 +302,19 @@ body.dark-mode .search-box {
 
 .game-tag {
    display: inline;
+   border-radius: 10px;
    border: 1px black solid;
    padding: 7px;
 }
+
+.icon-star {
+   font-size: 20px;
+}
+
+.icon-star-empty {
+   font-size: 20px;
+}
+
 
 .name-and-rating {
    padding-bottom: 15px;
