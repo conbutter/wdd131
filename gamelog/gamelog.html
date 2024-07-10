@@ -25,7 +25,34 @@
             </nav>
         </header>
         <main class='main-home'>
-            <p>Content coming soon!</p>
+            <div class="top-interactables">
+                <a class="adjust-button" id='add-button'>+</a>
+                <a class="adjust-button" id='remove-button'>-</a>
+                <form class="search-form">
+                    <input class="search-box" type="text" placeholder="Find a game">
+                    <input class="search-button" type="image" name="submit" src="images/search.svg" alt="Submit">
+                </form>
+            </div>
+            <div class="divider-line"></div>
+            <div class="game-display">
+                <!-- INSERT GAMES HERE THROUGH JS -->
+                <div class="game">
+                    <img class="game-img" src="images/games/another-crab-treasure_key.jpg" alt="Box art for Another Crab's Treasure">
+                    <div class="game-right">
+                        <p class="game-tag">Steam</p>
+                        <div class="name-and-rating">
+                            <h2 class="game-name">Another Crab's Treasure</h2>
+                            <span class="rating" role="img" aria-label="Rating: 4 out of 5 stars">
+                                <span aria-hidden="true" class="icon-star">⭐</span>
+                                <span aria-hidden="true" class="icon-star">⭐</span>
+                                <span aria-hidden="true" class="icon-star">⭐</span>
+                                <span aria-hidden="true" class="icon-star-empty">⭐</span>
+                                <span aria-hidden="true" class="icon-star-empty">☆</span>
+                            </span>
+                        </div>
+                        <p class="game-description">A soulslike adventure set in a crumbling underwater world.</p>
+                    </div>
+                </div>
         </main>
         <footer>
             <section class='footer-main'>
