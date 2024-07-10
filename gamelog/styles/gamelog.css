@@ -252,6 +252,10 @@ p {
    padding-top: 10px;
 }
 
+.game-far-right {
+   padding-top: 10px;
+}
+
 .game-tag {
    display: inline;
    border: 1px black solid;
