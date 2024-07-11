@@ -383,7 +383,4 @@ body.dark-mode .search-box {
    .game-far-right {
       flex-direction: column;
    }
-
-/* ---------- */
-/* END OF CSS */
-/* ---------- */
+}
