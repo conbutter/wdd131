@@ -1,3 +1,7 @@
+// ---------------------
+// DARK MODE VIEWER CODE
+// ---------------------
+
 const darkModeButton = document.querySelector(".dark-mode");
 var darkMode = localStorage.getItem('darkMode') === '1' ? 1 : 0;
 
@@ -97,37 +101,33 @@ function applyVisualMode() {
     }
 }
 
-// Select the add button and remove button
+darkModeButton.addEventListener("click", switchVisualMode);
+applyVisualMode();
+
+// -----------------------
+// ADD / SHOW FORM BUTTONS
+// -----------------------
+
 const addButton = document.getElementById('add-button');
 const removeButton = document.getElementById('remove-button');
 
-// Select the add form and remove form sections
 const addForm = document.getElementById('add-form');
 const removeForm = document.getElementById('remove-form');
 
-// Add event listeners to the buttons
 addButton.addEventListener('click', () => {
-    // Toggle the display of the add form
     if (addForm.style.display === 'none' || addForm.style.display === '') {
         addForm.style.display = 'block';
     } else {
         addForm.style.display = 'none';
     }
-    // Ensure the remove form is hidden
     removeForm.style.display = 'none';
 });
 
 removeButton.addEventListener('click', () => {
-    // Toggle the display of the remove form
     if (removeForm.style.display === 'none' || removeForm.style.display === '') {
         removeForm.style.display = 'block';
     } else {
         removeForm.style.display = 'none';
     }
-    // Ensure the add form is hidden
     addForm.style.display = 'none';
 });
-
-
-darkModeButton.addEventListener("click", switchVisualMode);
-applyVisualMode();
