@@ -131,3 +131,9 @@ removeButton.addEventListener('click', () => {
     }
     addForm.style.display = 'none';
 });
+
+// TO-DO:
+// + Add in functionality to take content from form and add to page content + array
+// + Add title removal functionality
+// + Add in title search
+// + Have page take from array and display accordingly (borrow recipe code)
