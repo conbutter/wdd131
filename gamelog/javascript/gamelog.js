@@ -32,7 +32,12 @@ function switchVisualMode() {
         gameContainers.forEach(container => container.style.borderColor = "white");
         gameTags.forEach(tag => tag.style.borderColor = "white");
         gameLinks.forEach(link => link.style.color = "#d781ff");
-        gameEditButtons.forEach(button => button.style.color = "#ffffff");
+        gameEditButtons.forEach(button => {
+            button.style.color = "#ffffff";
+            if (button.id === 'favorite-button') {
+                button.style.color = "#ff0000";
+            }
+        });
         darkModeButton.textContent = "Light Mode";
     } else {
         darkMode = 0;
@@ -48,7 +53,12 @@ function switchVisualMode() {
         gameContainers.forEach(container => container.style.borderColor = "black");
         gameTags.forEach(tag => tag.style.borderColor = "black");
         gameLinks.forEach(link => link.style.color = "rgb(57, 43, 88)");
-        gameEditButtons.forEach(button => button.style.color = "#000000");
+        gameEditButtons.forEach(button => {
+            button.style.color = "#000000";
+            if (button.id === 'favorite-button') {
+                button.style.color = "#ff0000";
+            }
+        });
         darkModeButton.textContent = "Dark Mode";
     }
 
@@ -81,7 +91,12 @@ function applyVisualMode() {
         gameContainers.forEach(container => container.style.borderColor = "white");
         gameTags.forEach(tag => tag.style.borderColor = "white");
         gameLinks.forEach(link => link.style.color = "#d781ff");
-        gameEditButtons.forEach(button => button.style.color = "#ffffff");
+        gameEditButtons.forEach(button => {
+            button.style.color = "#ffffff";
+            if (button.id === 'favorite-button') {
+                button.style.color = "#ff0000";
+            }
+        });
         darkModeButton.textContent = "Light Mode";
     } else {
         body.style.backgroundColor = "#fcfbfb";
@@ -96,7 +111,12 @@ function applyVisualMode() {
         gameContainers.forEach(container => container.style.borderColor = "black");
         gameTags.forEach(tag => tag.style.borderColor = "black");
         gameLinks.forEach(link => link.style.color = "rgb(57, 43, 88)");
-        gameEditButtons.forEach(button => button.style.color = "#000000");
+        gameEditButtons.forEach(button => {
+            button.style.color = "#000000";
+            if (button.id === 'favorite-button') {
+                button.style.color = "#ff0000";
+            }
+        });
         darkModeButton.textContent = "Dark Mode";
     }
 }
@@ -138,6 +158,8 @@ removeButton.addEventListener('click', () => {
 import games from './games.mjs';
 
 function createGameHTML(game) {
+    const favoriteColor = game.favorite === 1 ? 'color: red;' : '';  // Check if favorite is set to 1
+
     return `
     <div class="game">
         <img class="game-img" src="${game.image}" alt="${game.image_alt_text}">
@@ -157,13 +179,14 @@ function createGameHTML(game) {
             </div>
         </div>
         <div class="game-far-right">
-            <a class="game-adjust-button" id='favorite-button'>❤</a>
-            <a class="game-adjust-button" id='edit-button'>✎</a>
+            <a class="game-adjust-button" id='favorite-button' data-game-name="${game.name}" style="${favoriteColor}">❤</a>
             <a class="game-adjust-button" id='delete-button'>✕</a>
         </div>
     </div>
 `;
 }
+// Removed this part from HTML for time's sake:
+// <a class="game-adjust-button" id='edit-button'>✎</a>
 
 function renderGames(games) {
     const container = document.querySelector('.game-display');
@@ -199,8 +222,6 @@ function ratingTemplate(rating) {
     return html;
 }
 
-
-
 // ---------------
 // SEARCH BAR CODE
 // ---------------
@@ -232,12 +253,36 @@ function searchHandler(event) {
 // --------------
 
 function init() {
-    renderGames(games);
     applyVisualMode();
+    renderGames(games);
 }
 
 document.addEventListener('DOMContentLoaded', init);
 
+// --------------------
+// FAVORITE BUTTON CODE
+// --------------------
+
+document.addEventListener('click', function(event) {
+    if (event.target && event.target.id === 'favorite-button') {
+        toggleFavoriteStatus();
+    }
+});
+
+function toggleFavoriteStatus() {
+    const favoriteButton = document.getElementById('favorite-button');
+    console.log(favoriteButton)
+    const gameName = favoriteButton.dataset.gameName;
+    console.log(gameName)
+    const favoriteIndex = games.findIndex(game => game.name === gameName);
+
+    if (favoriteIndex !== -1) {
+        games[favoriteIndex].favorite = games[favoriteIndex].favorite === 1 ? 0 : 1;
+        init();
+    }
+}
+
 // TO-DO:
+// + Fix favorite button
 // + Add title add / removal functionality
 // + Add update display functionality when content is added / removed
