@@ -327,6 +327,7 @@ body.dark-mode .search-box {
 
 .game-name {
    font-size: 2.2em;
+   margin-top: 0;
    margin-bottom: 0;
    font-family: "Dela Gothic One", "IM Fell French Canon SC";
 }

@@ -14,7 +14,6 @@ function switchVisualMode() {
     const searchBox = document.querySelector(".search-box");
     const gameTags = document.querySelectorAll(".game-tag");
     const gameLinks = document.querySelectorAll(".game-link");
-    const gameEditButtons = document.querySelectorAll(".game-adjust-button");
     const darkModeButton = document.querySelector(".dark-mode");
 
     if (darkMode == 0) {
@@ -30,12 +29,6 @@ function switchVisualMode() {
         searchBox.style.color = "#ffffff";
         gameTags.forEach(tag => tag.style.borderColor = "white");
         gameLinks.forEach(link => link.style.color = "#d781ff");
-        // gameEditButtons.forEach(button => {
-        //     button.style.color = "#ffffff";
-        //     if (button.id === 'favorite-button') {
-        //         button.style.color = "#ff0000";
-        //     }
-        // });
         darkModeButton.textContent = "Light Mode";
     } else {
         darkMode = 0;
@@ -50,12 +43,6 @@ function switchVisualMode() {
         searchBox.style.color = "#000000";
         gameTags.forEach(tag => tag.style.borderColor = "black");
         gameLinks.forEach(link => link.style.color = "rgb(57, 43, 88)");
-        // gameEditButtons.forEach(button => {
-        //     button.style.color = "#000000";
-        //     if (button.id === 'favorite-button') {
-        //         button.style.color = "#ff0000";
-        //     }
-        // });
         darkModeButton.textContent = "Dark Mode";
     }
 
@@ -72,7 +59,6 @@ function applyVisualMode() {
     const searchBox = document.querySelector(".search-box");
     const gameTags = document.querySelectorAll(".game-tag");
     const gameLinks = document.querySelectorAll(".game-link");
-    const gameEditButtons = document.querySelectorAll(".game-adjust-button");
     const darkModeButton = document.querySelector(".dark-mode");
     
     if (darkMode == 1) {
@@ -87,12 +73,6 @@ function applyVisualMode() {
         searchBox.style.color = "#ffffff";
         gameTags.forEach(tag => tag.style.borderColor = "white");
         gameLinks.forEach(link => link.style.color = "#d781ff");
-        // gameEditButtons.forEach(button => {
-        //     button.style.color = "#ffffff";
-        //     if (button.id === 'favorite-button') {
-        //         button.style.color = "#ff0000";
-        //     }
-        // });
         darkModeButton.textContent = "Light Mode";
     } else {
         body.style.backgroundColor = "#fcfbfb";
@@ -106,12 +86,6 @@ function applyVisualMode() {
         searchBox.style.color = "#000000";
         gameTags.forEach(tag => tag.style.borderColor = "black");
         gameLinks.forEach(link => link.style.color = "rgb(57, 43, 88)");
-        // gameEditButtons.forEach(button => {
-        //     button.style.color = "#000000";
-        //     if (button.id === 'favorite-button') {
-        //         button.style.color = "#ff0000";
-        //     }
-        // });
         darkModeButton.textContent = "Dark Mode";
     }
     updateFavoriteButtonColors()
