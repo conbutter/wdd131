@@ -313,20 +313,18 @@ document.getElementById('game-add-form').addEventListener('submit', function(eve
     const gameNotes = document.getElementById('game-notes').value || '';
     const gameStorePage = document.getElementById('game-store-page').value || '';
     const gameWebsite = document.getElementById('game-website').value || '';
-    const gameTags = (document.getElementById('game-tags') || { value: '' }).value.split(',').map(tag => tag.trim()); // Optional tags input
 
     const newGame = {
         name: gameName,
-        platform: gamePlatform,
+        tags: gamePlatform,
         rating: parseInt(gameRating),
         favorite: gameFavorite,
         description: gameDescription,
-        notes: gameNotes,
-        storePage: gameStorePage,
-        website: gameWebsite,
-        tags: gameTags,
+        user_description: gameNotes,
         image: 'images/games/unknown-game-key-01.png',
-        image_alt_text: `Box art for ${gameName}`
+        image_alt_text: `Box art for ${gameName}`,
+        store_url: gameStorePage,
+        site_url: gameWebsite
     };
     games.push(newGame);
     localStorage.setItem('games', JSON.stringify(games));
