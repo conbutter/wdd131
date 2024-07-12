@@ -314,24 +314,41 @@ document.getElementById('game-add-form').addEventListener('submit', function(eve
     const gameStorePage = document.getElementById('game-store-page').value || '';
     const gameWebsite = document.getElementById('game-website').value || '';
 
-    const newGame = {
-        name: gameName,
-        tags: gamePlatform,
-        rating: parseInt(gameRating),
-        favorite: gameFavorite,
-        description: gameDescription,
-        user_description: gameNotes,
-        image: 'images/games/unknown-game-key-01.png',
-        image_alt_text: `Box art for ${gameName}`,
-        store_url: gameStorePage,
-        site_url: gameWebsite
-    };
-    games.push(newGame);
-    localStorage.setItem('games', JSON.stringify(games));
-    this.reset();
-    addForm.style.display = 'none';
-    renderGames(games);
-    console.log('New game added:', newGame);
+    const imageInput = document.getElementById('game-image');
+    let gameImage = 'images/games/unknown-game-key-01.png';
+    let gameImageAltText = `Box art for ${gameName}`;
+
+    if (imageInput.files && imageInput.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            gameImage = e.target.result;
+            addNewGame();
+        };
+        reader.readAsDataURL(imageInput.files[0]);
+    } else {
+        addNewGame();
+    }
+
+    function addNewGame() {
+        const newGame = {
+            name: gameName,
+            tags: gamePlatform,
+            rating: parseInt(gameRating),
+            favorite: gameFavorite,
+            description: gameDescription,
+            user_description: gameNotes,
+            image: gameImage,
+            image_alt_text: gameImageAltText,
+            store_url: gameStorePage,
+            site_url: gameWebsite
+        };
+        games.push(newGame);
+        localStorage.setItem('games', JSON.stringify(games));
+        document.getElementById('game-add-form').reset();
+        addForm.style.display = 'none';
+        renderGames(games);
+        console.log('New game added:', newGame);
+    }
 });
 
 // TO-DO:
