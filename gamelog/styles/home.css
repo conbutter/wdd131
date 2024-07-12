@@ -66,9 +66,9 @@ header {
 
 nav {
    display: flex;
-   justify-content: space-between; /* Space between elements */
+   justify-content: space-between;
    align-items: center;
-   padding: 0 20px; /* Add some padding for spacing */
+   padding: 0 20px;
 }
 
 .nav-left {
@@ -97,12 +97,12 @@ nav a:hover {
 }
 
 .button-box {
-   margin-left: auto; /* Pushes the button box to the far right */
+   margin-left: auto;
 }
 
 .logo {
-   width: 80px; /* Set a reasonable width for the logo */
-   height: auto; /* Maintain aspect ratio */
+   width: 80px;
+   height: auto;
 }
 
 
