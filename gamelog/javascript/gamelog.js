@@ -289,6 +289,6 @@ function toggleFavoriteStatus(favoriteButton) {
 }
 
 // TO-DO:
-// + Fix favorite button
 // + Add title add / removal functionality
 // + Add update display functionality when content is added / removed
+// + Style add / remove forms accordingly
