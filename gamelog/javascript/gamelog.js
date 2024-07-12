@@ -284,12 +284,18 @@ function toggleArrayDelete(deleteButton) {
     const deleteIndex = games.findIndex(game => game.name === gameName);
 
     if (deleteIndex !== -1) {
-        games[deleteIndex].favorite = games[deleteIndex].favorite === 1 ? 0 : 1;
-        // console.log(deleteButton.dataset.gameName + " pressed")
-        games.splice(deleteIndex, 1)
-    }
 
-    renderGames(games);
+        const userConfirmed = confirm("Are you sure you want to remove " + gameName + " from your library log?");
+        if (userConfirmed) {
+            console.log(gameName + " deleted.")
+            games[deleteIndex].favorite = games[deleteIndex].favorite === 1 ? 0 : 1;
+            games.splice(deleteIndex, 1)
+            renderGames(games);
+        } else {
+            console.log(gameName + " deletion cancelled.")
+        }
+    }
+        
 }
 
 // ------------------
@@ -297,9 +303,8 @@ function toggleArrayDelete(deleteButton) {
 // ------------------
 
 document.getElementById('game-add-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the default form submission behavior
+    event.preventDefault();
 
-    // Collect form data
     const gameName = document.getElementById('game-name').value;
     const gamePlatformSelect = document.getElementById('game-platform');
     const gamePlatform = Array.from(gamePlatformSelect.selectedOptions).map(option => option.value);
@@ -309,8 +314,8 @@ document.getElementById('game-add-form').addEventListener('submit', function(eve
     const gameNotes = document.getElementById('game-notes').value || '';
     const gameStorePage = document.getElementById('game-store-page').value || '';
     const gameWebsite = document.getElementById('game-website').value || '';
-    
-    // Create new game object
+    const gameTags = (document.getElementById('game-tags') || { value: '' }).value.split(',').map(tag => tag.trim()); // Optional tags input
+
     const newGame = {
         name: gameName,
         platform: gamePlatform,
@@ -320,42 +325,17 @@ document.getElementById('game-add-form').addEventListener('submit', function(eve
         notes: gameNotes,
         storePage: gameStorePage,
         website: gameWebsite,
+        tags: gameTags,
         image: 'images/games/unknown-game-key-01.png',
         image_alt_text: `Box art for ${gameName}`
     };
-    
-    // Add the new game to the games array
     games.push(newGame);
-
-    // Update local storage or backend to persist the new game (local storage example below)
     localStorage.setItem('games', JSON.stringify(games));
-
-    // Optionally, clear the form after submission
     this.reset();
-
-    // Optionally, hide the form after submission
     addForm.style.display = 'none';
-
-    // Update the game display to reflect the newly added game
-    updateGameDisplay();
-
-    // Log to confirm the addition
+    renderGames(games);
     console.log('New game added:', newGame);
 });
-
-// Function to update the game display
-function updateGameDisplay() {
-    const gameDisplay = document.querySelector('.game-display');
-    gameDisplay.innerHTML = ''; // Clear current display
-
-    games.forEach(game => {
-        const gameHTML = createGameHTML(game);
-        gameDisplay.innerHTML += gameHTML;
-    });
-
-    // Re-apply dark mode styles if necessary
-    applyVisualMode();
-}
 
 // TO-DO:
 // + Add title addition functionality

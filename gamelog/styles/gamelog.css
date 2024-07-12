@@ -289,6 +289,7 @@ body.dark-mode .search-box {
 }
 
 .game-right {
+   margin-right: auto;
    padding-top: 10px;
 }
 
