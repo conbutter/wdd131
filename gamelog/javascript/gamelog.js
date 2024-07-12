@@ -199,17 +199,13 @@ function ratingTemplate(rating) {
     return html;
 }
 
-function init() {
-    renderGames(games);
-    applyVisualMode();
-}
 
-document.addEventListener('DOMContentLoaded', init);
 
 // ---------------
 // SEARCH BAR CODE
 // ---------------
 
+const searchButton = document.querySelector('.search-button');
 searchButton.addEventListener('click', searchHandler);
 
 function searchHandler(event) {
@@ -218,21 +214,30 @@ function searchHandler(event) {
     const searchInput = document.querySelector('.search-box');
     const searchTerm = searchInput.value.trim().toLowerCase();
     
-    const filteredRecipes = recipes.filter(recipe => {
+    const filteredGames = games.filter(game => {
         return (
-            recipe.name.toLowerCase().includes(searchTerm) ||
-            recipe.description.toLowerCase().includes(searchTerm) ||
-            recipe.tags.some(tag => tag.toLowerCase().includes(searchTerm)) ||
-            recipe.recipeIngredient.some(ingredient => ingredient.toLowerCase().includes(searchTerm))
+            game.name.toLowerCase().includes(searchTerm) ||
+            game.description.toLowerCase().includes(searchTerm) ||
+            game.tags.some(tag => tag.toLowerCase().includes(searchTerm))
         );
     });
 
-    filteredRecipes.sort((a, b) => a.name.localeCompare(b.name));
-    renderRecipes(filteredRecipes);
+    filteredGames.sort((a, b) => a.name.localeCompare(b.name));
+    renderGames(filteredGames);
+    applyVisualMode();
 }
 
-// TO-DO:
+// --------------
+// SITE LOAD CODE
+// --------------
 
-// + Add in title search
+function init() {
+    renderGames(games);
+    applyVisualMode();
+}
+
+document.addEventListener('DOMContentLoaded', init);
+
+// TO-DO:
 // + Add title add / removal functionality
-// + Have page take from array and display accordingly (borrow recipe code)
+// + Add update display functionality when content is added / removed
