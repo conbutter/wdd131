@@ -296,7 +296,66 @@ function toggleArrayDelete(deleteButton) {
 // GAME ADD FORM CODE
 // ------------------
 
+document.getElementById('game-add-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
 
+    // Collect form data
+    const gameName = document.getElementById('game-name').value;
+    const gamePlatformSelect = document.getElementById('game-platform');
+    const gamePlatform = Array.from(gamePlatformSelect.selectedOptions).map(option => option.value);
+    const gameRating = document.getElementById('game-rating').value;
+    const gameFavorite = document.getElementById('game-favorite').value === 'Yes' ? 1 : 0;
+    const gameDescription = document.getElementById('game-description').value;
+    const gameNotes = document.getElementById('game-notes').value || '';
+    const gameStorePage = document.getElementById('game-store-page').value || '';
+    const gameWebsite = document.getElementById('game-website').value || '';
+    
+    // Create new game object
+    const newGame = {
+        name: gameName,
+        platform: gamePlatform,
+        rating: parseInt(gameRating),
+        favorite: gameFavorite,
+        description: gameDescription,
+        notes: gameNotes,
+        storePage: gameStorePage,
+        website: gameWebsite,
+        image: 'images/games/unknown-game-key-01.png',
+        image_alt_text: `Box art for ${gameName}`
+    };
+    
+    // Add the new game to the games array
+    games.push(newGame);
+
+    // Update local storage or backend to persist the new game (local storage example below)
+    localStorage.setItem('games', JSON.stringify(games));
+
+    // Optionally, clear the form after submission
+    this.reset();
+
+    // Optionally, hide the form after submission
+    addForm.style.display = 'none';
+
+    // Update the game display to reflect the newly added game
+    updateGameDisplay();
+
+    // Log to confirm the addition
+    console.log('New game added:', newGame);
+});
+
+// Function to update the game display
+function updateGameDisplay() {
+    const gameDisplay = document.querySelector('.game-display');
+    gameDisplay.innerHTML = ''; // Clear current display
+
+    games.forEach(game => {
+        const gameHTML = createGameHTML(game);
+        gameDisplay.innerHTML += gameHTML;
+    });
+
+    // Re-apply dark mode styles if necessary
+    applyVisualMode();
+}
 
 // TO-DO:
 // + Add title addition functionality
