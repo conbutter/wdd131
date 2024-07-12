@@ -332,6 +332,14 @@ body.dark-mode .search-box {
    font-family: "Dela Gothic One", "IM Fell French Canon SC";
 }
 
+/* FORM CSS */
+
+.add-form {
+   font-family: "Play", Lato, Helvetica, sans-serif;
+   margin: 0 auto;
+   padding: 10px;
+}
+
 /* MEDIA QUERIES */
 
 @media screen and (min-width: 800px) {

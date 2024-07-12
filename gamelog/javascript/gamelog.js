@@ -12,9 +12,9 @@ function switchVisualMode() {
     const searchImg = document.querySelector(".search-button");
     const searchForm = document.querySelector(".search-form");
     const searchBox = document.querySelector(".search-box");
-    const gameContainer = document.querySelector(".game")
-    const gameTag = document.querySelector(".game-tag");
-    const gameLinks = document.querySelectorAll(".game-link")
+    const gameContainers = document.querySelectorAll(".game")
+    const gameTags = document.querySelectorAll(".game-tag");
+    const gameLinks = document.querySelectorAll(".game-link");
     const gameEditButtons = document.querySelectorAll(".game-adjust-button");
     const darkModeButton = document.querySelector(".dark-mode");
 
@@ -29,8 +29,8 @@ function switchVisualMode() {
         searchForm.style.borderColor = "white";
         searchBox.style.backgroundColor = "#121212";
         searchBox.style.color = "#ffffff";
-        gameContainer.style.borderColor = "white";
-        gameTag.style.borderColor = "white";
+        gameContainers.forEach(container => container.style.borderColor = "white");
+        gameTags.forEach(tag => tag.style.borderColor = "white");
         gameLinks.forEach(link => link.style.color = "#d781ff");
         gameEditButtons.forEach(button => button.style.color = "#ffffff");
         darkModeButton.textContent = "Light Mode";
@@ -45,8 +45,8 @@ function switchVisualMode() {
         searchForm.style.borderColor = "black";
         searchBox.style.backgroundColor = "#ffffff";
         searchBox.style.color = "#000000";
-        gameContainer.style.borderColor = "black";
-        gameTag.style.borderColor = "black";
+        gameContainers.forEach(container => container.style.borderColor = "black");
+        gameTags.forEach(tag => tag.style.borderColor = "black");
         gameLinks.forEach(link => link.style.color = "rgb(57, 43, 88)");
         gameEditButtons.forEach(button => button.style.color = "#000000");
         darkModeButton.textContent = "Dark Mode";
@@ -62,9 +62,9 @@ function applyVisualMode() {
     const searchImg = document.querySelector(".search-button");
     const searchForm = document.querySelector(".search-form");
     const searchBox = document.querySelector(".search-box");
-    const gameContainer = document.querySelector(".game")
-    const gameTag = document.querySelector(".game-tag");
-    const gameLinks = document.querySelectorAll(".game-link")
+    const gameContainers = document.querySelectorAll(".game")
+    const gameTags = document.querySelectorAll(".game-tag");
+    const gameLinks = document.querySelectorAll(".game-link");
     const gameEditButtons = document.querySelectorAll(".game-adjust-button");
     const darkModeButton = document.querySelector(".dark-mode");
 
@@ -78,8 +78,8 @@ function applyVisualMode() {
         searchForm.style.borderColor = "white";
         searchBox.style.backgroundColor = "#121212";
         searchBox.style.color = "#ffffff";
-        gameContainer.style.borderColor = "white";
-        gameTag.style.borderColor = "white";
+        gameContainers.forEach(container => container.style.borderColor = "white");
+        gameTags.forEach(tag => tag.style.borderColor = "white");
         gameLinks.forEach(link => link.style.color = "#d781ff");
         gameEditButtons.forEach(button => button.style.color = "#ffffff");
         darkModeButton.textContent = "Light Mode";
@@ -93,8 +93,8 @@ function applyVisualMode() {
         searchForm.style.borderColor = "black";
         searchBox.style.backgroundColor = "#ffffff";
         searchBox.style.color = "#000000";
-        gameContainer.style.borderColor = "black";
-        gameTag.style.borderColor = "black";
+        gameContainers.forEach(container => container.style.borderColor = "black");
+        gameTags.forEach(tag => tag.style.borderColor = "black");
         gameLinks.forEach(link => link.style.color = "rgb(57, 43, 88)");
         gameEditButtons.forEach(button => button.style.color = "#000000");
         darkModeButton.textContent = "Dark Mode";
@@ -102,7 +102,6 @@ function applyVisualMode() {
 }
 
 darkModeButton.addEventListener("click", switchVisualMode);
-applyVisualMode();
 
 // -----------------------
 // ADD / SHOW FORM BUTTONS
@@ -132,8 +131,108 @@ removeButton.addEventListener('click', () => {
     addForm.style.display = 'none';
 });
 
+// --------------------------
+// DISPLAY ARRAY CONTENT CODE
+// --------------------------
+
+import games from './games.mjs';
+
+function createGameHTML(game) {
+    return `
+    <div class="game">
+        <img class="game-img" src="${game.image}" alt="${game.image_alt_text}">
+        <div class="game-right">
+            <div class="name-and-rating">
+                <h2 class="game-name">${game.name}</h2>
+                <div class="tag-and-rating">
+                    ${tagsTemplate(game.tags)}
+                    ${ratingTemplate(game.rating)}
+                </div>
+            </div>
+            <p class="game-user-description"><b>Your Notes: </b>${game.user_description}</p>
+            <p class="game-description"><i>${game.description}</i></p>
+            <div class="game-links">
+                <a id="link-store" class="game-link" href="${game.store_url}">Store Page</a>
+                <a id="link-website" class="game-link" href="${game.site_url}">Website</a>
+            </div>
+        </div>
+        <div class="game-far-right">
+            <a class="game-adjust-button" id='favorite-button'>❤</a>
+            <a class="game-adjust-button" id='edit-button'>✎</a>
+            <a class="game-adjust-button" id='delete-button'>✕</a>
+        </div>
+    </div>
+`;
+}
+
+function renderGames(games) {
+    const container = document.querySelector('.game-display');
+    container.innerHTML = ''; 
+
+    if (Array.isArray(games)) {
+        games.forEach(game => {
+            container.innerHTML += createGameHTML(game);
+        });
+    } else {
+        container.innerHTML = createGameHTML(games);
+    }
+}
+
+function tagsTemplate(tags) {
+    let html = '';
+    tags.forEach(tag => {
+        html += `<p class="game-tag">${tag}</p>\n`;
+    });
+    return html;
+}
+
+function ratingTemplate(rating) {
+    let html = `<span class="rating" role="img" aria-label="Rating: ${rating} out of 5 stars">`;
+    for (let i = 1; i <= 5; i++) {
+        if (rating >= i) {
+            html += '<span aria-hidden="true" class="icon-star">★</span>';
+        } else {
+            html += '<span aria-hidden="true" class="icon-star-empty">☆</span>';
+        }
+    }
+    html += `</span>`;
+    return html;
+}
+
+function init() {
+    renderGames(games);
+    applyVisualMode();
+}
+
+document.addEventListener('DOMContentLoaded', init);
+
+// ---------------
+// SEARCH BAR CODE
+// ---------------
+
+searchButton.addEventListener('click', searchHandler);
+
+function searchHandler(event) {
+    event.preventDefault();
+    
+    const searchInput = document.querySelector('.search-box');
+    const searchTerm = searchInput.value.trim().toLowerCase();
+    
+    const filteredRecipes = recipes.filter(recipe => {
+        return (
+            recipe.name.toLowerCase().includes(searchTerm) ||
+            recipe.description.toLowerCase().includes(searchTerm) ||
+            recipe.tags.some(tag => tag.toLowerCase().includes(searchTerm)) ||
+            recipe.recipeIngredient.some(ingredient => ingredient.toLowerCase().includes(searchTerm))
+        );
+    });
+
+    filteredRecipes.sort((a, b) => a.name.localeCompare(b.name));
+    renderRecipes(filteredRecipes);
+}
+
 // TO-DO:
-// + Add in functionality to take content from form and add to page content + array
-// + Add title removal functionality
+
 // + Add in title search
+// + Add title add / removal functionality
 // + Have page take from array and display accordingly (borrow recipe code)

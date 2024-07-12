@@ -7,7 +7,7 @@
     <meta name="author" content="Connor Butterfield">
     <meta name="description" content="Library viewer and editor for GameLog.">
     <link rel="stylesheet" href="styles/gamelog.css">
-    <script src="javascript/gamelog.js" defer></script>
+    <script type="module" src="javascript/gamelog.js" defer></script>
 </head>
 <body>
     <div id='content'>
@@ -37,7 +37,6 @@
                 <form id="game-add-form">
                     <label for="game-name">Game Name:</label>
                     <input type="text" id="game-name" name="game-name" required><br>
-            
                     <label for="game-platform">Game Platform:</label>
                     <select id="game-platform" name="game-platform" multiple required>
                         <option value="Steam">Steam</option>
@@ -46,7 +45,6 @@
                         <option value="Nintendo">Nintendo</option>
                         <option value="Other">Other</option>
                     </select><br>
-            
                     <label for="game-rating">Game Rating:</label>
                     <select id="game-rating" name="game-rating" required>
                         <option value="1">1</option>
@@ -55,25 +53,19 @@
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select><br>
-            
                     <label for="game-favorite">Game Favorite:</label>
                     <select id="game-favorite" name="game-favorite" required>
                         <option value="Yes">Yes</option>
                         <option value="No">No</option>
                     </select><br>
-            
                     <label for="game-description">Game Description:</label>
                     <textarea id="game-description" name="game-description" required></textarea><br>
-            
                     <label for="game-notes">Game Notes:</label>
                     <textarea id="game-notes" name="game-notes"></textarea><br>
-            
                     <label for="game-store-page">Game Store Page:</label>
                     <input type="url" id="game-store-page" name="game-store-page"><br>
-            
                     <label for="game-website">Game Website:</label>
                     <input type="url" id="game-website" name="game-website"><br>
-            
                     <input type="submit" value="Add Game">
                 </form>
             </section>
