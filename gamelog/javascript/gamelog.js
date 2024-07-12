@@ -265,19 +265,25 @@ document.addEventListener('DOMContentLoaded', init);
 
 document.addEventListener('click', function(event) {
     if (event.target && event.target.id === 'favorite-button') {
-        toggleFavoriteStatus();
+        toggleFavoriteStatus(event.target);
     }
 });
 
-function toggleFavoriteStatus() {
-    const favoriteButton = document.getElementById('favorite-button');
-    console.log(favoriteButton)
+function toggleFavoriteStatus(favoriteButton) {
     const gameName = favoriteButton.dataset.gameName;
-    console.log(gameName)
     const favoriteIndex = games.findIndex(game => game.name === gameName);
 
     if (favoriteIndex !== -1) {
+        // Toggle favorite status
         games[favoriteIndex].favorite = games[favoriteIndex].favorite === 1 ? 0 : 1;
+
+        // Change button color based on favorite status
+        if (games[favoriteIndex].favorite === 1) {
+            favoriteButton.style.color = darkMode === 1 ? 'red' : 'red';
+        } else {
+            favoriteButton.style.color = darkMode === 1 ? 'white' : 'black';
+        }
+
         init();
     }
 }
