@@ -147,7 +147,9 @@ removeButton.addEventListener('click', () => {
 import games from './games.mjs';
 
 function createGameHTML(game) {
-    const favoriteColor = game.favorite === 1 ? 'color: red;' : '';  // Check if favorite is set to 1
+    const favoriteColor = game.favorite === 1 ? 'color: red;' : ''; 
+    const storeLink = game.store_url ? `<a id="link-store" class="game-link" href="${game.store_url}">Store Page</a>` : '';
+    const websiteLink = game.site_url ? `<a id="link-website" class="game-link" href="${game.site_url}">Website</a>` : '';
 
     return `
     <div class="game">
@@ -163,8 +165,8 @@ function createGameHTML(game) {
             <p class="game-user-description"><b>Your Notes: </b>${game.user_description}</p>
             <p class="game-description"><i>${game.description}</i></p>
             <div class="game-links">
-                <a id="link-store" class="game-link" href="${game.store_url}">Store Page</a>
-                <a id="link-website" class="game-link" href="${game.site_url}">Website</a>
+                ${storeLink}
+                ${websiteLink}
             </div>
         </div>
         <div class="game-far-right">
@@ -172,10 +174,8 @@ function createGameHTML(game) {
             <a class="game-adjust-button" id='delete-button' data-game-name="${game.name}">✕</a>
         </div>
     </div>
-`;
+    `;
 }
-// Removed this part from HTML for time's sake:
-// <a class="game-adjust-button" id='edit-button'>✎</a>
 
 function renderGames(games) {
     const container = document.querySelector('.game-display');
@@ -335,5 +335,4 @@ document.getElementById('game-add-form').addEventListener('submit', function(eve
 });
 
 // TO-DO:
-// + Add title addition functionality
 // + Add update display functionality when content is added
