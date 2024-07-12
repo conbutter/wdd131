@@ -295,7 +295,6 @@ function toggleArrayDelete(deleteButton) {
             console.log(gameName + " deletion cancelled.")
         }
     }
-        
 }
 
 // ------------------
