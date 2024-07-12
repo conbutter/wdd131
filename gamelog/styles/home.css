@@ -40,8 +40,8 @@ body {
 
 .dark-mode{
    background-color: #392B58;
-   color: #776fbc;
-   border: 2px solid #776fbc;
+   color: #ffffff;
+   border: 2px solid #ffffff;
    text-decoration: none;
    font-size: 18px;
    padding: 15px 30px;
@@ -191,15 +191,17 @@ footer p {
    font-size: 25px;
 }
 
-#hero-msg h1, #hero-msg h4 { 
+#hero-msg h1, #hero-msg h2 { 
    text-align: center;
    font-family: "Dela Gothic One", "IM Fell French Canon SC";
    color: white;
    text-shadow: 2px 2px 5px #271c3e;
 }
 
-#hero-msg h4 {
+#hero-msg h2 {
    font-family: "Play", Lato, Helvetica, sans-serif;
+   font-size: 0.9em;
+   padding-bottom: 15px;
 }
 
 .button-box { 
