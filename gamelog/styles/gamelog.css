@@ -275,7 +275,7 @@ body.dark-mode .search-box {
    flex-direction: column;
    border-radius: 10px;
    max-width: 100%;
-   border: 1px black solid;
+   border: 1px #121212 solid;
    justify-content: center;
    padding: 10px;
    margin: 15px;

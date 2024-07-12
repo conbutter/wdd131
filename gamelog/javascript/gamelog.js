@@ -17,6 +17,7 @@ function switchVisualMode() {
     const darkModeButton = document.querySelector(".dark-mode");
 
     if (darkMode == 0) {
+        console.log("Dark Mode enabled, switchVisualMode()")
         darkMode = 1;
         body.style.backgroundColor = "#121212";
         body.style.color = "#ffffff";
@@ -31,6 +32,7 @@ function switchVisualMode() {
         gameLinks.forEach(link => link.style.color = "#d781ff");
         darkModeButton.textContent = "Light Mode";
     } else {
+        console.log("Dark Mode disabled, switchVisualMode()")
         darkMode = 0;
         body.style.backgroundColor = "#fcfbfb";
         body.style.color = "#000000";
@@ -62,6 +64,7 @@ function applyVisualMode() {
     const darkModeButton = document.querySelector(".dark-mode");
     
     if (darkMode == 1) {
+        console.log("Dark Mode enabled, applyVisualMode()")
         body.style.backgroundColor = "#121212";
         body.style.color = "#ffffff";
         header.style.backgroundColor = "#392B58";
@@ -75,6 +78,7 @@ function applyVisualMode() {
         gameLinks.forEach(link => link.style.color = "#d781ff");
         darkModeButton.textContent = "Light Mode";
     } else {
+        console.log("Dark Mode disabled, applyVisualMode()")
         body.style.backgroundColor = "#fcfbfb";
         body.style.color = "#000000";
         header.style.backgroundColor = "#392B58";
@@ -165,7 +169,7 @@ function createGameHTML(game) {
         </div>
         <div class="game-far-right">
             <a class="game-adjust-button" id='favorite-button' data-game-name="${game.name}" style="${favoriteColor}">❤</a>
-            <a class="game-adjust-button" id='delete-button'>✕</a>
+            <a class="game-adjust-button" id='delete-button' data-game-name="${game.name}">✕</a>
         </div>
     </div>
 `;
@@ -184,6 +188,7 @@ function renderGames(games) {
     } else {
         container.innerHTML = createGameHTML(games);
     }
+    applyVisualMode()
 }
 
 function tagsTemplate(tags) {
@@ -244,13 +249,16 @@ function init() {
 
 document.addEventListener('DOMContentLoaded', init);
 
-// --------------------
-// FAVORITE BUTTON CODE
-// --------------------
+// ---------------------------------------
+// FAVORITE BUTTON CODE + DELETE GAME CODE
+// ---------------------------------------
 
 document.addEventListener('click', function(event) {
     if (event.target && event.target.id === 'favorite-button') {
         toggleFavoriteStatus(event.target);
+    }
+    if (event.target && event.target.id === 'delete-button') {
+        toggleArrayDelete(event.target);
     }
 });
 
@@ -259,20 +267,37 @@ function toggleFavoriteStatus(favoriteButton) {
     const favoriteIndex = games.findIndex(game => game.name === gameName);
 
     if (favoriteIndex !== -1) {
-        // Toggle favorite status
         games[favoriteIndex].favorite = games[favoriteIndex].favorite === 1 ? 0 : 1;
 
-        // Change button color based on favorite status
         if (games[favoriteIndex].favorite === 1) {
             favoriteButton.style.color = darkMode === 1 ? 'red' : 'red';
         } else {
             favoriteButton.style.color = darkMode === 1 ? 'white' : 'black';
         }
 
-        init();
+        applyVisualMode();
     }
 }
 
+function toggleArrayDelete(deleteButton) {
+    const gameName = deleteButton.dataset.gameName;
+    const deleteIndex = games.findIndex(game => game.name === gameName);
+
+    if (deleteIndex !== -1) {
+        games[deleteIndex].favorite = games[deleteIndex].favorite === 1 ? 0 : 1;
+        // console.log(deleteButton.dataset.gameName + " pressed")
+        games.splice(deleteIndex, 1)
+    }
+
+    renderGames(games);
+}
+
+// ------------------
+// GAME ADD FORM CODE
+// ------------------
+
+
+
 // TO-DO:
-// + Add title add / removal functionality
-// + Add update display functionality when content is added / removed
+// + Add title addition functionality
+// + Add update display functionality when content is added
