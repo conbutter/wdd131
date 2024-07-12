@@ -16,9 +16,21 @@ body {
    margin: 0;
 }
 
-.add-form, .remove-form {
+.add-form, .help-form {
    display: none;
+   outline: 2px #392B58 solid;
+   border-radius: 15px;
+   max-width: 75%;
+   margin: 0 auto;
+   padding: 15px;
+   margin-bottom: 25px;
 }
+
+#help-form h2 {
+   font-family: "Dela Gothic One", "IM Fell French Canon SC";
+}
+
+
 
 /* Button Content */
       
@@ -28,7 +40,7 @@ body {
    text-decoration: none;
    font-size: 30px;
    padding: 5px 15px;
-   margin-top: 0; /* Remove top margin */
+   margin-top: 0;
    border-radius: 5px;
    opacity: 90%;
    margin-left: 10px;
@@ -44,11 +56,11 @@ body {
    text-decoration: none;
    font-size: 30px;
    padding: 5px 15px;
-   margin-top: 0; /* Remove top margin */
+   margin-top: 0;
    border-radius: 5px;
    opacity: 90%;
    text-align: center;
-   margin: 0 10px; /* Add horizontal margin for spacing */
+   margin: 0 10px;
 }
 
 .game-adjust-button:hover {
@@ -90,9 +102,9 @@ header {
 
 nav {
    display: flex;
-   justify-content: space-between; /* Space between elements */
+   justify-content: space-between;
    align-items: center;
-   padding: 0 20px; /* Add some padding for spacing */
+   padding: 0 20px;
 }
 
 .nav-left {
@@ -121,14 +133,13 @@ nav a:hover {
 }
 
 .button-box {
-   margin-left: auto; /* Pushes the button box to the far right */
+   margin-left: auto;
 }
 
 .logo {
-   width: 80px; /* Set a reasonable width for the logo */
-   height: auto; /* Maintain aspect ratio */
+   width: 80px;
+   height: auto;
 }
-
 
 /* ---------- */
 /* FOOTER CSS */

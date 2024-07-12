@@ -27,13 +27,14 @@
         <main class='main-home'>
             <div class="top-interactables">
                 <a class="adjust-button" id='add-button'>+</a>
-                <a class="adjust-button" id='remove-button'>-</a>
+                <a class="adjust-button" id='help-button'>?</a>
                 <form class="search-form">
                     <input class="search-box" type="text" placeholder="Search by name, description, or platform">
                     <input class="search-button" type="image" name="submit" src="images/search.svg" alt="Submit">
                 </form>
             </div>
             <section class="add-form" id="add-form" style="display: none;">
+                <h2>Add Game</h2>
                 <form id="game-add-form">
                     <label for="game-name">Game Name:</label>
                     <input type="text" id="game-name" name="game-name" required><br>
@@ -71,38 +72,22 @@
                     <input type="submit" value="Add Game">
                 </form>
             </section>
-            <section class="remove-form" id="remove-form" style="display: none;">
-                <p>Placeholder text for the remove form section.</p>
+            <section class="help-form" id="help-form" style="display: none;">
+                <h2>How To Use GameLog</h2>
+                <p>Placeholder text for the help form section.</p>
             </section>
             <div class="game-display">
                 <!-- INSERT GAMES HERE THROUGH JS -->
+                <!-- If JavaScript breaks, HTML included in the game section will notify user of site error -->
                 <div class="game">
-                    <img class="game-img" src="images/games/another-crab-treasure_key.jpg" alt="Box art for Another Crab's Treasure">
                     <div class="game-right">
                         <div class="name-and-rating">
-                            <h2 class="game-name">Another Crab's Treasure</h2>
-                            <div class="tag-and-rating">
-                                <p class="game-tag">Steam</p>
-                                <span class="rating" role="img" aria-label="Rating: 4 out of 5 stars">
-                                    <span aria-hidden="true" class="icon-star">★</span>
-                                    <span aria-hidden="true" class="icon-star">★</span>
-                                    <span aria-hidden="true" class="icon-star">★</span>
-                                    <span aria-hidden="true" class="icon-star">★</span>
-                                    <span aria-hidden="true" class="icon-star-empty">☆</span>
-                                </span>
-                            </div>
+                            <h2 class="game-name">AN ERROR HAS OCCURED</h2>
                         </div>
-                        <p class="game-user-description"><b>Your Notes: </b>Quality game, had a lot of fun with it.</p>
-                        <p class="game-description"><i>A soulslike adventure set in a crumbling underwater world.</i></p>
+                        <p class="game-user-description"><b>If you're seeing this, something went wrong. </b>Try reloading the page or clear your site cache.</p>
+                        <p class="game-description"><i>If nothing seems to fix it, please contact the site owner.</i></p>
                         <div class="game-links">
-                            <a id="link-store" class="game-link" href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://store.steampowered.com/app/1887840/Another_Crabs_Treasure/&ved=2ahUKEwiHn-vT9pyHAxV3DTQIHVhICQkQFnoECB4QAQ&usg=AOvVaw3GRaqttUjscScSrt5_hbBG">Store Page</a>
-                            <a id="link-website" class="game-link" href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://aggrocrab.com/ACT&ved=2ahUKEwjg3f3Y9pyHAxXCMDQIHQW9AFkQFnoECHMQAQ&usg=AOvVaw3rJic0kr9KJTHOeguVFjDd">Website</a>
                         </div>
-                    </div>
-                    <div class="game-far-right">
-                        <a class="game-adjust-button" id='favorite-button'>❤</a>
-                        <a class="game-adjust-button" id='edit-button'>✎</a>
-                        <a class="game-adjust-button" id='delete-button'>✕</a>
                     </div>
                 </div>
             </div>
@@ -130,3 +115,10 @@
     </div>
 </body>
 </html>
+
+<!-- TO DO LIST
+    Each page of your Web site must satisfy the following requirements:
+        Significant textual content, appropriate for your audience, so that they can understand the meaning and message of this site.
+        Be valid HTML and CSS
+        Score at least 97 on Lighthouse.
+ -->

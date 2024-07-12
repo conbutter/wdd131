@@ -117,10 +117,10 @@ darkModeButton.addEventListener("click", switchVisualMode);
 // -----------------------
 
 const addButton = document.getElementById('add-button');
-const removeButton = document.getElementById('remove-button');
+const removeButton = document.getElementById('help-button');
 
 const addForm = document.getElementById('add-form');
-const removeForm = document.getElementById('remove-form');
+const removeForm = document.getElementById('help-form');
 
 addButton.addEventListener('click', () => {
     if (addForm.style.display === 'none' || addForm.style.display === '') {
