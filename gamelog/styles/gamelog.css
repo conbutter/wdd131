@@ -16,6 +16,8 @@ body {
    margin: 0;
 }
 
+/* Form content */
+
 .add-form, .help-form {
    display: none;
    outline: 2px #392B58 solid;
@@ -24,13 +26,52 @@ body {
    margin: 0 auto;
    padding: 15px;
    margin-bottom: 25px;
+   padding-bottom: 25px;
 }
 
 #help-form h2 {
    font-family: "Dela Gothic One", "IM Fell French Canon SC";
 }
 
+#add-form h2 {
+   font-family: "Dela Gothic One", "IM Fell French Canon SC";
+}
 
+#add-form input {
+   display: inline;
+}
+
+#add-form {
+   max-width: 75%;
+}
+
+.form-group {
+   display: flex;
+   flex-direction: column;
+   margin-bottom: 15px;
+}
+
+.form-group label {
+   margin-bottom: 5px;
+   font-weight: 600;
+}
+
+.form-group input[type="text"],
+.form-group input[type="url"],
+.form-group textarea,
+.form-group select {
+   padding: 10px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+}
+
+.form-group input[type="file"] {
+   border: none;
+}
+
+.form-group textarea {
+   resize: vertical;
+}
 
 /* Button Content */
       

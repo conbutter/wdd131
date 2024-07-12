@@ -36,39 +36,57 @@
             <section class="add-form" id="add-form" style="display: none;">
                 <h2>Add Game</h2>
                 <form id="game-add-form">
-                    <label for="game-name">Game Name:</label>
-                    <input type="text" id="game-name" name="game-name" required><br>
-                    <label for="game-platform">Game Platform:</label>
-                    <select id="game-platform" name="game-platform" multiple required>
-                        <option value="Steam">Steam</option>
-                        <option value="PlayStation">PlayStation</option>
-                        <option value="Xbox">Xbox</option>
-                        <option value="Nintendo">Nintendo</option>
-                        <option value="Other">Other</option>
-                    </select><br>
-                    <label for="game-rating">Game Rating:</label>
-                    <select id="game-rating" name="game-rating" required>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select><br>
-                    <label for="game-favorite">Game Favorite:</label>
-                    <select id="game-favorite" name="game-favorite" required>
-                        <option value="Yes">Yes</option>
-                        <option value="No">No</option>
-                    </select><br>
-                    <label for="game-description">Game Description:</label>
-                    <textarea id="game-description" name="game-description" required></textarea><br>
-                    <label for="game-notes">Game Notes:</label>
-                    <textarea id="game-notes" name="game-notes"></textarea><br>
-                    <label for="game-store-page">Game Store Page:</label>
-                    <input type="url" id="game-store-page" name="game-store-page"><br>
-                    <label for="game-website">Game Website:</label>
-                    <input type="url" id="game-website" name="game-website"><br>
-                    <label for="game-image">Game Image:</label>
-                    <input type="file" id="game-image" name="game-image" accept="image/*"><br>
+                    <div class="form-group">
+                        <label for="game-name">Game Name:</label>
+                        <input type="text" id="game-name" name="game-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="game-platform">Platform(s):</label>
+                        <select id="game-platform" name="game-platform" multiple required>
+                            <option value="Steam">Steam</option>
+                            <option value="PlayStation">PlayStation</option>
+                            <option value="Xbox">Xbox</option>
+                            <option value="Nintendo">Nintendo</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="game-rating">Rating:</label>
+                        <select id="game-rating" name="game-rating" required>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="game-favorite">Favorite?</label>
+                        <select id="game-favorite" name="game-favorite" required>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="game-description">General Description:</label>
+                        <textarea id="game-description" name="game-description" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="game-notes">Your Notes:</label>
+                        <textarea id="game-notes" name="game-notes"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="game-store-page">Store Page (optional):</label>
+                        <input type="url" id="game-store-page" name="game-store-page">
+                    </div>
+                    <div class="form-group">
+                        <label for="game-website">Website (optional):</label>
+                        <input type="url" id="game-website" name="game-website">
+                    </div>
+                    <div class="form-group">
+                        <label for="game-image">Image (optional):</label>
+                        <input type="file" id="game-image" name="game-image" accept="image/*">
+                    </div>
                     <input type="submit" value="Add Game">
                 </form>
             </section>
